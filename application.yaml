@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nest-gitops
+  name: nest-gitops-k8s
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/hannu1992/nest-gitops.git
+    repoURL: https://github.com/hannu1992/nest-gitops-k8s.git
     targetRevision: main
     path: .
   destination:
