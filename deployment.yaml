@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: app
-        image: hannumannamdev1992/nest-gitops:v1
+        image: hannumannamdev1992/nest-gitops:v2
         ports:
         - containerPort: 3000
