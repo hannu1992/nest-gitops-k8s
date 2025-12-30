@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nest-gitops
 spec:
-  replicas: 2
+  replicas: 2   # HPA will control this at runtime
   selector:
     matchLabels:
       app: nest-gitops
@@ -22,3 +22,10 @@ spec:
             name: nest-gitops-config
         - secretRef:
             name: nest-gitops-secret
+        resources:                 # ✅ INSIDE container
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
