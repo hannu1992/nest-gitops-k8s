@@ -17,3 +17,8 @@ spec:
         image: hannumannamdev1992/nest-gitops:bb980a3
         ports:
         - containerPort: 3000
+        envFrom:
+        - configMapRef:
+            name: nest-gitops-config
+        - secretRef:
+            name: nest-gitops-secret
